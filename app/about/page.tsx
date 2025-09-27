@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Edit3, Brain, Timer, Sparkles } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -117,305 +117,186 @@ export default function AboutPage() {
           <article className="prose prose-lg max-w-none">
             {/* Hero Section */}
             <header className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                About Lumowrite: Your Distraction-Free Writing Tool Online
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">About Lumowrite</h1>
               <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-                Lumowrite is a free, distraction-free writing tool designed for freewriting, calm writing, and stream of
-                consciousness. Experience the power of focused, mindful writing in a clean, minimalist digital space.
+                We all carry thoughts that need somewhere to go. Writing them out is one of the simplest ways to make
+                sense of them.
               </p>
             </header>
 
-            {/* What is Lumowrite Section */}
+            {/* What is this? */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">What is Lumowrite?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">What is this?</h2>
               <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>Lumowrite is your space to think things through. Without pressure or perfection.</p>
                 <p>
-                  Lumowrite is a revolutionary <strong>distraction-free writing tool online</strong> that transforms how
-                  you approach writing. Whether you&apos;re looking to <strong>freewrite</strong>, practice{" "}
-                  <strong>calm writing</strong>, or engage in <strong>stream of consciousness writing</strong>, our
-                  platform provides the perfect digital sanctuary for your thoughts.
+                  It's not a note-taking app, but an app for writing out your ideas and thoughts. For processing
+                  emotions, working through decisions, or simply letting your mind wander onto the page.
                 </p>
                 <p>
-                  Unlike traditional word processors cluttered with formatting options and distractions, Lumowrite
-                  offers a <strong>minimalist writing tool</strong> that focuses solely on what matters: your words and
-                  ideas. This <strong>free online writing tool</strong> is designed to help you write for clarity,
-                  creativity, and personal insight.
+                  Think of it as having a conversation with yourself - except instead of your thoughts bouncing around
+                  in your head, they get to stretch out and breathe on the screen.
                 </p>
               </div>
             </section>
 
-            {/* Why Freewriting Matters */}
+            {/* How it works */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Why Freewriting and Distraction-Free Writing?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">How it works</h2>
               <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
                 <p>
-                  <strong>Freewriting</strong> is a powerful technique where you write continuously without stopping to
-                  edit, censor, or perfect your words. This form of <strong>mindful writing</strong> helps unlock
-                  creativity, process emotions, and discover insights you never knew you had.
+                  Start by setting the timer and just write freely. Don't focus on grammar or structure. Just about
+                  getting your thoughts out of your head and onto the page.
                 </p>
-                <p>
-                  Research shows that <strong>distraction-free writing</strong> environments significantly improve
-                  focus, creativity, and writing quality. By removing visual clutter and unnecessary features, writers
-                  can enter a state of flow more easily, making <strong>writing meditation</strong> a natural part of
-                  their process.
-                </p>
-                <p>
-                  Our <strong>distraction-free writing tool online</strong> creates the ideal conditions for{" "}
-                  <strong>therapeutic writing</strong>, helping users process thoughts, solve problems, and gain mental
-                  clarity through the simple act of putting words on a page.
-                </p>
-              </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Features That Support Your Writing Journey</h2>
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-4">
-                  <div className="flex items-center mb-3">
-                    <Edit3 className="h-6 w-6 mr-3 text-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">Clean Writing Interface</h3>
-                  </div>
-                  <p className="text-foreground/80">
-                    Our <strong>minimalist writing tool</strong> removes all distractions, providing a clean, calm space
-                    for your thoughts. No formatting buttons, no menus – just you and your words.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center mb-3">
-                    <Timer className="h-6 w-6 mr-3 text-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">Built-in Writing Timer</h3>
-                  </div>
-                  <p className="text-foreground/80">
-                    Set focused writing sessions with our integrated timer. Perfect for{" "}
-                    <strong>freewriting exercises</strong> and maintaining consistent writing habits.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center mb-3">
-                    <Brain className="h-6 w-6 mr-3 text-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">AI-Powered Reflection</h3>
-                  </div>
-                  <p className="text-foreground/80">
-                    After your <strong>free write</strong> session, engage with AI to explore your thoughts deeper,
-                    gaining insights and clarity from your writing.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center mb-3">
-                    <Sparkles className="h-6 w-6 mr-3 text-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">Privacy-First Design</h3>
-                  </div>
-                  <p className="text-foreground/80">
-                    Your writing stays on your device. This <strong>online writing app</strong> prioritizes your privacy
-                    while providing powerful writing tools.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Who It's For */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Who Benefits from Distraction-Free Writing?</h2>
-              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
-                <p>
-                  Lumowrite serves anyone seeking a better relationship with writing and thinking. Our{" "}
-                  <strong>focus writing app</strong> is perfect for:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Writers and creatives</strong> looking for a <strong>creative writing tool</strong> that
-                    supports flow states
-                  </li>
-                  <li>
-                    <strong>Students and professionals</strong> who need a <strong>simple writing app</strong> for
-                    brainstorming and idea development
-                  </li>
-                  <li>
-                    <strong>Journaling enthusiasts</strong> seeking an <strong>online journaling</strong> platform that
-                    feels personal and secure
-                  </li>
-                  <li>
-                    <strong>Therapists and coaches</strong> recommending <strong>therapeutic writing</strong> exercises
-                    to clients
-                  </li>
-                  <li>
-                    <strong>Anyone</strong> wanting to practice <strong>mindful writing</strong> and{" "}
-                    <strong>writing meditation</strong> for mental clarity
-                  </li>
+                <p>There's no right way to do it. You can:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Dump your thoughts when you're overwhelmed</li>
+                  <li>Talk through a decision you're facing</li>
+                  <li>Vent about something that's bothering you</li>
+                  <li>Explore an idea that's been nagging at you</li>
+                  <li>Just see what comes up when you start typing</li>
                 </ul>
+                <p className="font-medium">No backspace. No editing. Just flow.</p>
               </div>
             </section>
 
-            {/* How to Use */}
+            {/* Then we talk */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">
-                How to Use Lumowrite for Effective Freewriting
-              </h2>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Then we talk</h2>
               <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
-                <ol className="list-decimal pl-6 space-y-3">
-                  <li>
-                    <strong>Set your intention:</strong> Decide whether you want to vent, reflect, solve a problem, or
-                    simply think aloud
-                  </li>
-                  <li>
-                    <strong>Start the timer:</strong> Choose your <strong>freewriting</strong> duration (we recommend
-                    10-15 minutes for beginners)
-                  </li>
-                  <li>
-                    <strong>Write continuously:</strong> Don&apos;t stop, don&apos;t edit, don&apos;t judge – just let
-                    your thoughts flow in this <strong>distraction-free writing</strong> environment
-                  </li>
-                  <li>
-                    <strong>Reflect with AI:</strong> After writing, use our AI companion to explore your thoughts and
-                    gain new insights
-                  </li>
-                  <li>
-                    <strong>Export and save:</strong> Download your writing in various formats or continue the
-                    conversation with ChatGPT
-                  </li>
-                </ol>
-              </div>
-            </section>
-
-            {/* Benefits Section */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">
-                The Science Behind Distraction-Free Writing Tools
-              </h2>
-              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
-                <p>
-                  Research in cognitive psychology demonstrates that <strong>distraction-free writing</strong>{" "}
-                  environments significantly improve:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Cognitive clarity:</strong> <strong>Stream of consciousness writing</strong> helps organize
-                    thoughts and reduce mental clutter
-                  </li>
-                  <li>
-                    <strong>Emotional processing:</strong> <strong>Therapeutic writing</strong> provides a safe outlet
-                    for emotions and stress
-                  </li>
-                  <li>
-                    <strong>Creative breakthrough:</strong> <strong>Freewriting exercises</strong> bypass the inner
-                    critic and unlock creative potential
-                  </li>
-                  <li>
-                    <strong>Problem-solving:</strong> <strong>Writing for clarity</strong> helps identify solutions and
-                    new perspectives
-                  </li>
-                  <li>
-                    <strong>Mindfulness:</strong> <strong>Calm writing</strong> practices promote present-moment
-                    awareness and mental well-being
-                  </li>
+                <p>Once you've written, you can reflect on your thoughts with ChatGPT if you want.</p>
+                <p>The AI might:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Reflect on what you wrote</li>
+                  <li>Ask questions to help you see things more clearly</li>
+                  <li>Offer suggestions or frameworks to move forward</li>
+                  <li>Simply be a thoughtful companion to your thoughts</li>
                 </ul>
-              </div>
-            </section>
-
-            {/* Privacy and Security */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Privacy-First Online Writing Tool</h2>
-              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
                 <p>
-                  Unlike other <strong>online writing apps</strong>, Lumowrite prioritizes your privacy. Your writing is
-                  stored locally on your device, ensuring that your personal thoughts and{" "}
-                  <strong>freewriting sessions</strong> remain completely private.
-                </p>
-                <p>
-                  This <strong>free online writing tool</strong> only sends data to our servers when you explicitly
-                  choose to use the AI reflection feature, and even then, we don&apos;t store your writing permanently.
-                  Your <strong>digital writing space</strong> is truly yours.
+                  It's like having a friend who really listens - someone who can help you untangle what you're thinking
+                  and feeling.
                 </p>
               </div>
             </section>
 
-            {/* Getting Started */}
+            {/* Getting started */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Start Your Distraction-Free Writing Journey</h2>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Getting started</h2>
               <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>If you're not sure what to write, start with a simple question:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>What's on my mind right now?</li>
+                  <li>What's something I'm grateful for today?</li>
+                  <li>What do I wish I could say out loud?</li>
+                  <li>What's feeling heavy... or light?</li>
+                  <li>If I were being honest with myself, I'd say...</li>
+                </ul>
+                <p>Still stuck? Just start with "I don't know what to write..." and go from there.</p>
+              </div>
+            </section>
+
+            {/* Your space */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-6 text-foreground">This is your space</h2>
+              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>Let it be messy, honest, quiet, surprising, fun... whatever you need it to be.</p>
                 <p>
-                  Ready to experience the power of <strong>distraction-free writing</strong>? Lumowrite is completely
-                  free and requires no signup. Simply visit our homepage and start your first{" "}
-                  <strong>freewriting session</strong> today.
+                  The magic happens when you stop trying to write "well" and just write honestly. When you let your
+                  thoughts exist without judgment.
                 </p>
                 <p>
-                  Whether you&apos;re new to <strong>freewriting</strong> or an experienced practitioner of{" "}
-                  <strong>mindful writing</strong>, our <strong>minimalist writing tool</strong> adapts to your needs
-                  and supports your unique writing journey.
+                  Sometimes you'll discover things you didn't know you were thinking. Sometimes you'll work through
+                  problems just by getting them out of your head. Sometimes you'll just feel lighter afterward.
+                </p>
+                <p className="font-medium">That's the point.</p>
+              </div>
+            </section>
+
+            {/* Privacy */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Your privacy matters</h2>
+              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>Your writings are stored only on your device:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Everything stays in your browser's local storage</li>
+                  <li>Nothing is sent to servers unless you choose to use ChatGPT</li>
+                  <li>Your thoughts remain private by default</li>
+                  <li>If you clear your browser data, your writings will be lost (so export what matters)</li>
+                </ul>
+                <p>
+                  This approach prioritizes your privacy, but means your writings won't sync between different devices
+                  or browsers. We think that's a fair trade.
+                </p>
+                <p className="text-sm">
+                  <Link href="/privacy" className="text-primary underline">
+                    Read our full privacy policy
+                  </Link>
                 </p>
               </div>
-              <div className="text-center mt-8">
+            </section>
+
+            {/* Open source */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Built in the open</h2>
+              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>
+                  Lumowrite is open source because we believe tools for thinking should be transparent and
+                  community-owned.
+                </p>
+                <p>
+                  You can see exactly how it works, contribute improvements, or even run your own version. The code
+                  lives on{" "}
+                  <a
+                    href="https://github.com/yourusername/lumowrite"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline"
+                  >
+                    GitHub
+                  </a>
+                  .
+                </p>
+                <p>
+                  If you find this helpful, consider starring the repository or sharing it with other writers who might
+                  need a quiet space to think.
+                </p>
+              </div>
+            </section>
+
+            {/* Contact */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Get in touch</h2>
+              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p>
+                  Questions? Ideas? Just want to say hi? You can reach me at{" "}
+                  <Link
+                    href="https://einar.blog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline"
+                  >
+                    einar.blog
+                  </Link>
+                </p>
+                <p>I'd love to hear how you're using Lumowrite and what it means to you.</p>
+              </div>
+            </section>
+
+            {/* Let's begin */}
+            <section className="mb-12 text-center">
+              <div className="text-foreground/90 space-y-4 text-lg leading-relaxed">
+                <p className="font-medium text-xl">Ready to begin?</p>
+                <p>Your thoughts are waiting.</p>
+              </div>
+              <div className="mt-8">
                 <Link href="/">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-                    Start Writing Now - It&apos;s Free
+                    Start Writing
                   </Button>
                 </Link>
               </div>
             </section>
-
-            {/* FAQ Section */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Frequently Asked Questions</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">
-                    What makes Lumowrite different from other online writing tools?
-                  </h3>
-                  <p className="text-foreground/80">
-                    Lumowrite is specifically designed for <strong>freewriting</strong> and{" "}
-                    <strong>distraction-free writing</strong>. Unlike traditional word processors, we focus on the
-                    writing experience itself, removing all distractions and providing AI-powered reflection tools.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Is Lumowrite really free?</h3>
-                  <p className="text-foreground/80">
-                    Yes! Lumowrite is completely free to use. Our <strong>distraction-free writing tool online</strong>{" "}
-                    requires no subscription, no signup, and no hidden fees.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">
-                    How does freewriting help with creativity and mental clarity?
-                  </h3>
-                  <p className="text-foreground/80">
-                    <strong>Freewriting</strong> bypasses your inner critic and allows thoughts to flow naturally. This{" "}
-                    <strong>stream of consciousness writing</strong> technique helps unlock creativity, process
-                    emotions, and discover insights that structured writing might miss.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Can I use Lumowrite on mobile devices?</h3>
-                  <p className="text-foreground/80">
-                    Our <strong>online writing app</strong> works seamlessly across all devices, providing the same{" "}
-                    <strong>distraction-free writing</strong> experience whether you&apos;re on desktop, tablet, or
-                    mobile.
-                  </p>
-                </div>
-              </div>
-            </section>
           </article>
-        </div>
-
-        {/* Footer CTA */}
-        <div className="bg-primary/5 border-t border-border/10">
-          <div className="max-w-4xl mx-auto p-4 md:p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Ready to Transform Your Writing Practice?</h2>
-            <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
-              Join thousands of writers who have discovered the power of <strong>distraction-free writing</strong> with
-              Lumowrite. Start your <strong>freewriting journey</strong> today.
-            </p>
-            <Link href="/">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-                Start Your Free Writing Session
-              </Button>
-            </Link>
-          </div>
         </div>
       </main>
 
