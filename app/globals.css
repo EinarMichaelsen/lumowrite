@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 100%;
+    --muted-foreground: 0 0% 0%;
+
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 95%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+
+    --radius-lg: 0.5rem;
+    --radius-md: calc(0.5rem - 2px);
+    --radius-sm: calc(0.5rem - 4px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    height: 100%;
+  }
+
+  /* Custom styles for the textarea */
+  textarea {
+    caret-color: var(--foreground);
+    padding-left: 30% !important; /* Equal padding on both sides */
+    padding-right: 30% !important; /* Equal padding on both sides */
+    padding-top: 120px !important; /* Add significant whitespace at the top */
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* Center the placeholder */
+  textarea::placeholder {
+    @apply text-foreground/20;
+    white-space: pre-line; /* Preserve line breaks in placeholder */
+    text-align: center; /* Align text to the left */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; /* Match the width of the text area (100% - padding) */
+  }
+
+  /* Writing container styles */
+  .writing-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Hide scrollbar for cleaner look */
+  textarea::-webkit-scrollbar {
+    display: none;
+  }
+
+  textarea {
+    scrollbar-width: none;
+  }
+
+  /* Chat container styles */
+  .overflow-y-auto {
+    overflow-y: auto !important;
+  }
+
+  /* Preserve line breaks in chat messages */
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+
+  /* Disable text selection for UI elements */
+  .no-select {
+    user-select: none;
+  }
+
+  /* Smooth transitions */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 200ms;
+  }
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 768px) {
+  textarea {
+    padding-left: 20% !important; /* Equal padding on smaller screens */
+    padding-right: 20% !important;
+  }
+
+  textarea::placeholder {
+    width: 60%; /* Adjust placeholder width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  textarea {
+    padding-left: 10% !important; /* Equal padding on mobile */
+    padding-right: 10% !important;
+  }
+
+  textarea::placeholder {
+    width: 80%; /* Adjust placeholder width for mobile */
+  }
+}
