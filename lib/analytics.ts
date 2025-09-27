@@ -13,7 +13,7 @@ export function trackWritingCompleted(characterCount: number) {
 }
 
 // Track reflection started
-export function trackReflectionStarted(method: "in_app" | "chatgpt") {
+export function trackReflectionStarted(method: "chatgpt") {
   track("reflection_started", {
     method,
   })
@@ -46,7 +46,7 @@ export function trackFontChanged(font: string, size: number) {
   })
 }
 
-// Track export
+// Track export - keeping the original function name for compatibility
 export function trackExport() {
   track("export")
 }

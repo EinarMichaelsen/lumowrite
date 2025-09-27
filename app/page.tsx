@@ -3,8 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { useRouter } from "next/navigation"
-import { Maximize2, Timer, ExternalLink, Bot, Download, Check, Copy } from "lucide-react"
+import { Maximize2, Timer, ExternalLink, Download, Check, Copy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { HelpDialog } from "@/components/help-dialog"
 import { DarkModeToggle } from "@/components/dark-mode-toggle"
@@ -34,7 +33,6 @@ const HELP_TEXT = "just write something"
 export default function Home() {
   const [text, setText] = useState("")
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [intention, setIntention] = useState("think")
   const [showControls, setShowControls] = useState(true)
   const [isTimerActive, setIsTimerActive] = useState(false)
   const [timerMinutes, setTimerMinutes] = useState(15) // Default 15 minutes
@@ -42,7 +40,6 @@ export default function Home() {
   const [fontSize, setFontSize] = useState(18)
   const [fontFamily, setFontFamily] = useState("font-sans")
   const [isTyping, setIsTyping] = useState(false)
-  const [isFirstVisit, setIsFirstVisit] = useState(true)
   const [hasStartedWriting, setHasStartedWriting] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -51,17 +48,6 @@ export default function Home() {
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const hideControlsTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const scrollAccumulatorRef = useRef<number>(0) // Track accumulated scroll
-  const router = useRouter()
-
-  // Check if this is the first visit
-  useEffect(() => {
-    const hasVisitedBefore = localStorage.getItem("yap-visited")
-    if (hasVisitedBefore) {
-      setIsFirstVisit(false)
-    } else {
-      localStorage.setItem("yap-visited", "true")
-    }
-  }, [])
 
   // Focus the textarea on load
   useEffect(() => {
@@ -230,26 +216,7 @@ export default function Home() {
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value)
     // Auto-save to localStorage
-    localStorage.setItem(`yap-${intention}`, e.target.value)
-  }
-
-  const handleDiscuss = () => {
-    if (text.trim().length < 10) return
-
-    // Track writing completed
-    trackWritingCompleted(text.length)
-
-    // Track reflection started
-    trackReflectionStarted("in_app")
-
-    // Save text to localStorage
-    localStorage.setItem(`yap-${intention}`, text)
-
-    // Save current intention to localStorage
-    localStorage.setItem("yap-current-intention", intention)
-
-    // Navigate to chat without intention in URL
-    router.push(`/chat`)
+    localStorage.setItem("lumowrite-text", e.target.value)
   }
 
   const handleChatGpt = () => {
@@ -260,9 +227,6 @@ export default function Home() {
 
     // Track reflection started with ChatGPT
     trackReflectionStarted("chatgpt")
-
-    // Save text to localStorage
-    localStorage.setItem(`yap-${intention}`, text)
 
     // Create ChatGPT URL with the text as a prompt
     const chatGptUrl = createChatGptUrl(text)
@@ -448,11 +412,11 @@ ${text.replace(/\n/g, "\\par\n")}
 
   // Load saved text from localStorage on component mount
   useEffect(() => {
-    const savedText = localStorage.getItem(`yap-${intention}`)
+    const savedText = localStorage.getItem("lumowrite-text")
     if (savedText) {
       setText(savedText)
     }
-  }, [intention])
+  }, [])
 
   // Get font class based on selection
   const getFontClass = () => {
@@ -607,28 +571,16 @@ ${text.replace(/\n/g, "\\par\n")}
             <Maximize2 className="h-4 w-4" />
           </button>
 
-          {/* Reflect buttons - only show if there's text */}
+          {/* ChatGPT reflection - only show if there's text */}
           {text.trim().length >= 10 && (
-            <div className="flex gap-2">
-              {/* In-app reflection */}
-              <button
-                onClick={handleDiscuss}
-                className="text-xs flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20"
-              >
-                <Bot className="h-3 w-3" />
-                <span>Talk about it with your AI buddy</span>
-              </button>
-
-              {/* ChatGPT reflection */}
-              <button
-                onClick={handleChatGpt}
-                className="text-xs flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20"
-                title="Reflect using ChatGPT"
-              >
-                <ExternalLink className="h-3 w-3" />
-                <span>Discuss with ChatGPT</span>
-              </button>
-            </div>
+            <button
+              onClick={handleChatGpt}
+              className="text-xs flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20"
+              title="Reflect using ChatGPT"
+            >
+              <ExternalLink className="h-3 w-3" />
+              <span>Discuss with ChatGPT</span>
+            </button>
           )}
         </div>
       </div>
