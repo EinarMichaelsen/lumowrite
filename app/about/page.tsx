@@ -247,7 +247,7 @@ export default function AboutPage() {
                   You can see exactly how it works, contribute improvements, or even run your own version. The code
                   lives on{" "}
                   <a
-                    href="https://github.com/yourusername/lumowrite"
+                    href="https://github.com/EinarMichaelsen/lumowrite"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary underline"
